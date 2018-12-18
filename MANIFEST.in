@@ -1,0 +1,5 @@
+include deckglplotly/deckglplotly.min.js
+include deckglplotly/deckglplotly.dev.js
+include deckglplotly/metadata.json
+include deckglplotly/package.json
+include README.md
