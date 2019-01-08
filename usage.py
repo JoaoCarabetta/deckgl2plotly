@@ -19,12 +19,26 @@ app.layout = html.Div([
         ],
         value=1
     ),
+    dcc.Slider(
+        id='zoom-slider',
+        min=1,
+        max=12,
+        step=1,
+        value=4
+    ),
+    dcc.Slider(
+        id='lat-slider',
+        min=-35,
+        max=-34,
+        step=0.1,
+        value=-34
+    ),
     html.Div([
-        deckglplotly.deckglplotly(
+        deckglplotly.LineLayer(
             id='map',
-            initial_longitude=-56.256744, 
-            initial_latitude=-34.8749, 
-            initial_zoom=16,
+            longitude=-56.256744, 
+            latitude=-34.8749, 
+            zoom=16,
             data=json.load(open('test.json', 'r')),
             mapboxtoken='pk.eyJ1IjoiYWxpc2hvYmVpcmkiLCJhIjoiY2ozYnM3YTUxMDAxeDMzcGNjbmZyMmplZiJ9.ZjmQ0C2MNs1AzEBC_Syadg',
             # stroke_width=5,
@@ -40,5 +54,16 @@ def change_data(value):
     else:
         return json.load(open('test.json', 'r'))[:10]
 
+@app.callback(Output('map', 'zoom'),
+        [Input('zoom-slider', 'value')])
+def change_zoom(value):
+    return value
+
+@app.callback(Output('map', 'latitude'),
+        [Input('lat-slider', 'value')])
+def change_zoom(value):
+    return value
+
+
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8081)

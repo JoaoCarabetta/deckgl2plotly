@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import deckglplotly from './components/deckglplotly.react';
+import LineLayer from './components/LineLayer.react';
+import ScatterplotLayer from './components/ScatterplotLayer.react';
 
 export {
-    deckglplotly
+    LineLayer,
+    ScatterplotLayer
 };

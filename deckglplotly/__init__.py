@@ -33,13 +33,18 @@ _js_dist = [
     {
         'relative_package_path': 'deckglplotly.min.js',
         'dev_package_path': 'deckglplotly.dev.js',
-        'external_url': 'https://unpkg.com/{0}@{2}/{1}/{1}.min.js'.format(
-            package_name, __name__, __version__),
+        # 'external_url': 'https://unpkg.com/{0}@{2}/{1}/{1}.min.js'.format(
+        #     package_name, __name__, __version__),
         'namespace': package_name
     }
 ]
 
-_css_dist = []
+_css_dist = [
+    {
+        'relative_package_path': 'style.css',
+        'namespace': package_name
+    }
+]
 
 
 for _component in __all__:

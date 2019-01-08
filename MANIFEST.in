@@ -3,3 +3,4 @@ include deckglplotly/deckglplotly.dev.js
 include deckglplotly/metadata.json
 include deckglplotly/package.json
 include README.md
+include deckglplotly/style.css

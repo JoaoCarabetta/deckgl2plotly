@@ -1,5 +1,7 @@
-from .deckglplotly import deckglplotly
+from .LineLayer import LineLayer
+from .ScatterplotLayer import ScatterplotLayer
 
 __all__ = [
-    "deckglplotly"
+    "LineLayer",
+    "ScatterplotLayer"
 ]
